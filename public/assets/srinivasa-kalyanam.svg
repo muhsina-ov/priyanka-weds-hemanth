@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF6DE"/>
+      <stop offset="60%" stop-color="#FBE3A6"/>
+      <stop offset="100%" stop-color="#F0A83C"/>
+    </linearGradient>
+    <linearGradient id="gold2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B5741B"/>
+      <stop offset="50%" stop-color="#F7D784"/>
+      <stop offset="100%" stop-color="#B5741B"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="800" height="500" rx="24" fill="url(#sky)"/>
+  <rect x="8" y="8" width="784" height="484" rx="20" fill="none" stroke="url(#gold2)" stroke-width="6"/>
+  <rect x="22" y="22" width="756" height="456" rx="14" fill="none" stroke="#8F1D3A" stroke-width="2" stroke-dasharray="8 8" opacity="0.6"/>
+  <!-- Temple gopuram silhouette -->
+  <g fill="#8F1D3A" opacity="0.18">
+    <rect x="330" y="90" width="140" height="200"/>
+    <rect x="350" y="60" width="100" height="40"/>
+    <rect x="370" y="35" width="60" height="30"/>
+    <circle cx="400" cy="25" r="8"/>
+  </g>
+  <!-- Sun halo -->
+  <circle cx="400" cy="180" r="110" fill="#fff" opacity="0.45"/>
+  <circle cx="400" cy="180" r="88" fill="none" stroke="url(#gold2)" stroke-width="4"/>
+  <!-- Divine couple — stylized Srinivasa &amp; Padmavathi -->
+  <g>
+    <!-- Srinivasa (left) -->
+    <ellipse cx="330" cy="300" rx="52" ry="70" fill="#2E6B34"/>
+    <circle cx="330" cy="205" r="34" fill="#C68A4B"/>
+    <path d="M300 175 L300 150 L315 165 L330 142 L345 165 L360 150 L360 175 Z" fill="url(#gold2)" stroke="#8F1D3A" stroke-width="2"/>
+    <rect x="312" y="212" width="36" height="10" rx="5" fill="#fff" opacity="0.9"/>
+    <rect x="326" y="205" width="8" height="24" rx="4" fill="#C62B4F"/>
+    <ellipse cx="330" cy="300" rx="30" ry="48" fill="#F7D784" opacity="0.9"/>
+    <!-- Padmavathi (right) -->
+    <ellipse cx="475" cy="305" rx="50" ry="65" fill="#8F1D3A"/>
+    <circle cx="475" cy="210" r="30" fill="#D99A63"/>
+    <circle cx="475" cy="182" r="18" fill="none" stroke="url(#gold2)" stroke-width="4"/>
+    <ellipse cx="475" cy="305" rx="28" ry="44" fill="#FBE3A6"/>
+    <!-- garland joining -->
+    <path d="M360 280 Q 402 310 445 280" fill="none" stroke="#2E8B57" stroke-width="10"/>
+    <circle cx="385" cy="293" r="6" fill="#F6B93B"/>
+    <circle cx="402" cy="297" r="6" fill="#E0476A"/>
+    <circle cx="420" cy="293" r="6" fill="#F6B93B"/>
+  </g>
+  <!-- diyas -->
+  <g>
+    <ellipse cx="180" cy="400" rx="28" ry="10" fill="#8F1D3A"/>
+    <path d="M180 378 C 172 390, 172 394, 180 398 C 188 394, 188 390, 180 378" fill="#FFB62E"/>
+    <ellipse cx="620" cy="400" rx="28" ry="10" fill="#8F1D3A"/>
+    <path d="M620 378 C 612 390, 612 394, 620 398 C 628 394, 628 390, 620 378" fill="#FFB62E"/>
+  </g>
+  <text x="400" y="445" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-style="italic" fill="#7A1E12">Srinivasa Kalyanam</text>
+  <text x="400" y="470" text-anchor="middle" font-family="Georgia, serif" font-size="16" letter-spacing="4" fill="#8F1D3A">LORD VENKATESWARA • GODDESS PADMAVATHI</text>
+</svg>
