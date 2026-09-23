@@ -21,9 +21,12 @@ export default function CountdownSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative text-center"
       >
-        <h2 className="font-script text-5xl sm:text-6xl text-gradient-gold mb-8">
+        <h2 className="font-script text-5xl sm:text-6xl text-gradient-gold mb-4">
           Counting the Moments
         </h2>
+        <p className="mb-8 font-serif-body text-base sm:text-lg text-[hsl(var(--foreground)/0.75)]">
+          {invite.groomFull} <span className="font-script text-gradient-gold">weds</span> {invite.brideFull}
+        </p>
         <Countdown targetISO={invite.countdownTargetISO} label={invite.countdownLabel} />
       </motion.div>
     </section>

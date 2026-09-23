@@ -19,6 +19,9 @@ export default function Venue() {
       >
         <div className="ornament-divider text-xl">❁</div>
         <h2 className="mt-4 font-script text-5xl sm:text-6xl text-gradient-gold">The Venue</h2>
+        <p className="mt-3 font-script text-3xl text-gradient-sindoor">{invite.groomFull}</p>
+        <p className="font-script text-2xl text-gradient-gold">weds</p>
+        <p className="font-script text-3xl text-gradient-sindoor">{invite.brideFull}</p>
 
         <div className="mt-8 flex items-start justify-center gap-2">
           <MapPin size={20} className="mt-1 shrink-0 text-[hsl(var(--sindoor))]" />

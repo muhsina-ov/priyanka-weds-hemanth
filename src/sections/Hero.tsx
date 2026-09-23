@@ -14,8 +14,8 @@ const rise = {
   }),
 };
 
-/* Couple photo — uses the family's uploaded anime portrait.
-   Save the uploaded picture as public/assets/couple-photo.jpg.
+/* Couple photo — uses the family's uploaded portrait.
+   Save the 2nd uploaded picture as public/assets/couple-photo.jpg.
    Falls back to the bundled illustration if not yet added. */
 function CouplePhoto() {
   const [src, setSrc] = useState("/assets/couple-photo.jpg");
@@ -33,14 +33,33 @@ function CouplePhoto() {
           onError={() => {
             if (src !== "/assets/couple.png") setSrc("/assets/couple.png");
           }}
-          alt={`${invite.brideFull} and ${invite.groomFull}`}
+          alt={`${invite.groomFull} and ${invite.brideFull}`}
           className="h-auto w-full rounded-[1.6rem] object-cover"
         />
       </div>
       <p className="mt-3 font-serif-body italic text-sm text-[hsl(var(--foreground)/0.65)]">
-        {invite.brideFull} &amp; {invite.groomFull}
+        {invite.groomFull} &amp; {invite.brideFull}
       </p>
     </motion.div>
+  );
+}
+
+/* Lord Ganesha — uses the family's 1st uploaded picture.
+   Save it as public/assets/ganesha-photo.jpg (same circle size).
+   Falls back to the bundled illustration if not yet added. */
+function GaneshaPhoto() {
+  const [src, setSrc] = useState("/assets/ganesha-photo.jpg");
+  return (
+    <div className="animate-glow overflow-hidden rounded-full border-2 border-[hsl(var(--gold)/0.6)] shadow-[0_18px_40px_-12px_rgba(120,62,8,0.4)]">
+      <img
+        src={src}
+        onError={() => {
+          if (src !== "/assets/ganesha.svg") setSrc("/assets/ganesha.svg");
+        }}
+        alt="Lord Ganesha"
+        className="h-28 w-28 sm:h-36 sm:w-36 object-cover"
+      />
+    </div>
   );
 }
 
@@ -92,13 +111,7 @@ export default function Hero() {
           custom={0.05}
           className="flex flex-col items-center"
         >
-          <div className="animate-glow overflow-hidden rounded-full border-2 border-[hsl(var(--gold)/0.6)] shadow-[0_18px_40px_-12px_rgba(120,62,8,0.4)]">
-            <img
-              src="/assets/ganesha.svg"
-              alt="Lord Ganesha"
-              className="h-28 w-28 sm:h-36 sm:w-36 object-cover"
-            />
-          </div>
+          <GaneshaPhoto />
           <p className="mt-2 font-caps text-[10px] sm:text-xs text-[hsl(var(--sindoor))]">
             Sri Ganeshaya Namah
           </p>
@@ -111,7 +124,7 @@ export default function Hero() {
 
         <motion.h1 variants={rise} initial="hidden" animate="show" custom={0.35}
           className="mt-4 font-script text-6xl sm:text-8xl leading-[1.05] text-gradient-sindoor animate-shimmer">
-          {invite.brideFirst}
+          {invite.groomFirst}
         </motion.h1>
 
         <motion.div variants={rise} initial="hidden" animate="show" custom={0.5}
@@ -121,12 +134,12 @@ export default function Hero() {
 
         <motion.h1 variants={rise} initial="hidden" animate="show" custom={0.65}
           className="font-script text-6xl sm:text-8xl leading-[1.05] text-gradient-sindoor animate-shimmer">
-          {invite.groomFirst}
+          {invite.brideFirst}
         </motion.h1>
 
         <motion.p variants={rise} initial="hidden" animate="show" custom={0.75}
           className="mt-3 font-serif-body text-base sm:text-lg text-[hsl(var(--foreground)/0.75)]">
-          {invite.brideFull} &amp; {invite.groomFull}
+          {invite.groomFull} &amp; {invite.brideFull}
         </motion.p>
 
         <motion.p variants={rise} initial="hidden" animate="show" custom={0.85}

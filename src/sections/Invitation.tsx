@@ -220,6 +220,9 @@ export default function Invitation() {
           <h2 className="mt-4 font-script text-5xl sm:text-6xl text-gradient-gold">
             The Invitation
           </h2>
+          <p className="mt-3 font-script text-3xl text-gradient-sindoor">{invite.groomFull}</p>
+          <p className="font-script text-2xl text-gradient-gold">weds</p>
+          <p className="font-script text-3xl text-gradient-sindoor">{invite.brideFull}</p>
         </motion.div>
 
         <Envelope />
@@ -245,8 +248,8 @@ export default function Invitation() {
           </motion.div>
 
           <div className="grid gap-5 sm:grid-cols-2 sm:gap-4">
-            <FamilyCard side="left" role="The Bride" name={invite.brideFull ?? invite.brideFirst} parents="With the blessings of elders & family" />
-            <FamilyCard side="right" role="The Groom" name={invite.groomFull ?? invite.groomFirst} parents="With the blessings of elders & family" />
+            <FamilyCard side="left" role="The Groom" name={invite.groomFull ?? invite.groomFirst} parents="With the blessings of elders & family" />
+            <FamilyCard side="right" role="The Bride" name={invite.brideFull ?? invite.brideFirst} parents="With the blessings of elders & family" />
           </div>
         </div>
       </div>

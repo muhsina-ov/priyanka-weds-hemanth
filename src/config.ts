@@ -22,8 +22,8 @@ export const invite = {
   groomFirst: "Hemanth",
   brideFull: "Priyanka Perepu",
   groomFull: "Hemanth Nagarikanti",
-  monogram: "P · H",
-  hashtag: "#PriyankaWedsHemanth",
+  monogram: "H · P",
+  hashtag: "#HemanthWedsPriyanka",
   greetingTelugu: "శుభ వివాహం",
   greetingEnglish: "Shubha Vivaham",
 
@@ -63,6 +63,7 @@ export const invite = {
 
   // ── Venue ───────────────────────────────────────────────
   venueName: "SS Crystal Palace",
+  venueShort: "SS Crystal Palace, Gujarathipeta, Srikakulam 532005",
   venueAddress: "Yethapeta, Purushotham Nagar Colony, Gujarathipeta, Srikakulam, Andhra Pradesh 532005",
   // Used for the embedded preview AND the directions link
   mapsQuery: "SS CRYSTAL PALACE, Yethapeta, Purushotham Nagar Colony, Gujarathipeta, Srikakulam, Andhra Pradesh 532005",

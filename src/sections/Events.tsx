@@ -6,10 +6,30 @@ import {
   useMotionTemplate,
   AnimatePresence,
 } from "framer-motion";
-import { CalendarPlus, Download, Flame, Sparkles } from "lucide-react";
+import { CalendarPlus, Download, Flame, MapPin, Sparkles } from "lucide-react";
 import { invite, type WeddingEvent } from "@/config";
 import { googleCalendarUrl, downloadIcs } from "@/lib/calendar";
 import PetalRain from "@/components/PetalRain";
+
+/* ── Srinivasa Kalyanam — real photo if provided ────────────
+   Save a real picture as public/assets/srinivasa-kalyanam.jpg.
+   Falls back to the bundled illustration if not yet added. */
+function SrinivasaImage() {
+  const [src, setSrc] = useState("/assets/srinivasa-kalyanam.jpg");
+  return (
+    <div className="overflow-hidden rounded-2xl border border-[hsl(var(--gold)/0.5)] shadow-[0_14px_30px_-12px_rgba(120,62,8,0.35)]">
+      <img
+        src={src}
+        onError={() => {
+          if (src !== "/assets/srinivasa-kalyanam.svg")
+            setSrc("/assets/srinivasa-kalyanam.svg");
+        }}
+        alt="Srinivasa Kalyanam — Lord Venkateswara and Goddess Padmavathi"
+        className="h-auto w-full object-cover"
+      />
+    </div>
+  );
+}
 
 /* ── Marigold petal burst (fires when calendar is added) ───── */
 function PetalBurst({ burstKey }: { burstKey: number }) {
@@ -193,16 +213,23 @@ function EventCard({ ev, index }: { ev: WeddingEvent; index: number }) {
             </p>
           )}
 
+          {/* Venue on every card — Reception & Muhurtham */}
+          <div className="mt-4 flex items-start justify-center gap-1.5 text-center">
+            <MapPin size={16} className="mt-0.5 shrink-0 text-[hsl(var(--sindoor))]" />
+            <div>
+              <p className="font-serif-body font-semibold text-base sm:text-lg leading-tight">
+                {invite.venueName}
+              </p>
+              <p className="font-serif-body text-sm text-[hsl(var(--foreground)/0.7)] leading-snug">
+                {(invite as { venueShort?: string }).venueShort ?? invite.venueAddress}
+              </p>
+            </div>
+          </div>
+
           {/* Srinivasa Kalyanam — in the same Muhurtham slide */}
           {ev.id === "muhurtham" && (
             <div className="mt-6 w-full">
-              <div className="overflow-hidden rounded-2xl border border-[hsl(var(--gold)/0.5)] shadow-[0_14px_30px_-12px_rgba(120,62,8,0.35)]">
-                <img
-                  src="/assets/srinivasa-kalyanam.svg"
-                  alt="Srinivasa Kalyanam — Lord Venkateswara and Goddess Padmavathi"
-                  className="h-auto w-full object-cover"
-                />
-              </div>
+              <SrinivasaImage />
               <p className="mt-2 font-serif-body italic text-sm text-[hsl(var(--sindoor))]">
                 Srinivasa Kalyanam — divine blessings
               </p>
@@ -272,6 +299,14 @@ export default function Events() {
           <h2 className="mt-4 font-script text-5xl sm:text-6xl text-gradient-gold">
             {single ? "The Auspicious Moment" : "The Celebrations"}
           </h2>
+          {/* Groom on top, bride below — on all slides */}
+          <p className="mt-3 font-script text-3xl sm:text-4xl text-gradient-sindoor">
+            {invite.groomFull}
+          </p>
+          <p className="font-script text-2xl text-gradient-gold">weds</p>
+          <p className="font-script text-3xl sm:text-4xl text-gradient-sindoor">
+            {invite.brideFull}
+          </p>
         </motion.div>
 
         <div
